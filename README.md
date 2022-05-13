@@ -21,3 +21,26 @@ brew install lcov
 cmake -B buildtree
 cmake --build buildtree
 ```
+
+## 项目结构
+
+作为一个通用的项目模板，整个项目结构需要详细说明一下。
+
+先介绍源代码目录 src 的结构：
+
+```shell
+├── src
+│   ├── CMakeLists.txt
+│   ├── calc
+│   │   ├── CMakeLists.txt
+│   │   ├── calc.cpp
+│   │   └── include
+│   │       └── calc
+│   │           └── calc.h
+│   └── calc_console
+│       ├── CMakeLists.txt
+│       ├── bootstrap.cpp
+│       ├── include
+│       │   └── tui.h
+│       └── tui.cpp
+```

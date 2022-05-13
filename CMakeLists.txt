@@ -20,12 +20,16 @@ project(Calc VERSION 1.0.0 LANGUAGES CXX)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 # include 命令有 2 种用途：
-# 1）包含其他以 cmake 为后缀的文件。一般需要指定到这个文件的绝对路径
-# 2）包含其他的 module（不带 cmake 后缀）。会在 CMAKE_MODULE_PATH 下按名字寻找要包含的 module
+# 1）包含其他以 cmake 为后缀的文件，并执行。一般需要指定到这个文件的绝对路径
+# 2）包含其他的 module（不带 cmake 后缀），并执行。会在 CMAKE_MODULE_PATH 下按名字寻找要包含的 module
 #
-# 就这个例子来说，是第二种情况：加载 NoInSourceBuilds 模块
+# 就这个例子来说，是第二种情况：加载 NoInSourceBuilds 模块，并执行
 include(NoInSourceBuilds)
 
+# 用 add_subdirectory 命令对项目进行第一级拆分，分为 2 个模块，也就是：src 和 test 2 个目录
+#
+# add_subdirectory 命令会在指定的 src 目录（当前目录下的 src 目录）中寻找 CMakeLists.txt 文件
+# 如果能找到 CMakeLists.txt，那么这个文件会在「目录作用域」中进行解析（不同于「函数作用域」）
 add_subdirectory(src bin)
 add_subdirectory(test)
 
