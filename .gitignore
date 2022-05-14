@@ -1,1 +1,4 @@
 buildtree
+.cache/
+build/
+compile_commands.json
