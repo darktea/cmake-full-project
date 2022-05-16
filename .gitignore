@@ -2,3 +2,7 @@ buildtree
 .cache/
 build/
 compile_commands.json
+.idea/
+cmake-build-debug/
+Testing
+neovim.json

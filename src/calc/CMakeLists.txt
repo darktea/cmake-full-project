@@ -20,7 +20,7 @@ target_include_directories(calc_obj INTERFACE
 )
 
 # 直接使用 set_target_properties 命令设置必要的 PROPERTIES：
-# 
+#
 # PUBLIC_HEADER：指定 install 时，头文件的安装路径。
 # 我们推荐的做法是把 calc.h 安装到：{系统头文件目录}/calc
 # 而不是直接把 calc.h 安装到 ${系统头文件目录}

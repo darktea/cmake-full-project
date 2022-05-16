@@ -30,6 +30,8 @@ include(NoInSourceBuilds)
 #
 # add_subdirectory 命令会在指定的 src 目录（当前目录下的 src 目录）中寻找 CMakeLists.txt 文件
 # 如果能找到 CMakeLists.txt，那么这个文件会在「目录作用域」中进行解析（不同于「函数作用域」）
+#
+# 这里指定 bin 的意思是：最后的 binary 会被放置到 <build_tree>/src/bin 目录，而不是默认的 <build_tree>/src
 add_subdirectory(src bin)
 add_subdirectory(test)
 
